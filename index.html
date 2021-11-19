@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="./styles.css" /> -->
+
+    <title>PDF Template</title>
+    <style>
+      * {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.pdf-page-1 {
+  margin: 20px 40px;
+}
+
+.pdf-heading > h2 {
+  font-weight: bold;
+}
+
+.pdf-heading > h4 {
+  margin-top: 5px;
+  font-weight: lighter;
+}
+
+.heading {
+  text-align: right;
+}
+
+.tax-invoices {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.details {
+  text-align: right;
+  width: 70%;
+}
+
+.address {
+  width: 50%;
+}
+
+.value {
+  font-weight: lighter;
+  text-align: right;
+  margin-left: 10px;
+}
+
+.table {
+  width: 100%;
+  padding: 10px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-bottom: 40px;
+}
+
+th {
+  border-bottom: 1px solid black;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+.total-invoice {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.agreement {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.customer {
+  width: 50%;
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="pdf-page-1">
+      <div class="pdf-heading">
+        <h2>{{companyName}}</h2>
+        <h4>GST .Reg.No : {{GSTReg.No}}</h4>
+      </div>
+      <h3 class="heading">Tax Invoices</h3>
+      <div class="tax-invoices">
+        <div>
+          <h4>{{customerName}}</h4>
+          <h4 class="address">
+            {{customerAddress}}
+          </h4>
+        </div>
+        <div class="details">
+        <h4>Inv.No : <span class="value">{{InvNo}}</span></h4>
+        <h4>Inv.Date : <span class="value">{{InvDate}}</span></h4>
+        <h4>Ref : <span class="value">{{Ref}}</span></h4>
+        <h4>Terms : <span class="value">{{Terms}}</span></h4>
+        <h4>Veh.No : <span class="value">{{VehNo}}</span></h4>
+        <h4>Make & Model : <span class="value">{{MakeandModel}}</span></h4>
+      </div>
+    </div>
+
+    <div class="tax-table">
+        <table class="table" cellspacing="0" cellpadding="3">
+            <tr class="table-head">
+                    <th style="text-align: left">#</th>
+                    <th style="text-align: left">Description</th>
+                    <th style="text-align: center">Qty</th>
+                    <th style="text-align: right">Rate</th>
+                    <th style="text-align: right">Total</th>
+            </tr>
+            {{#lineItems}}
+            <tr>
+                    <td style="text-align: left">{{product_id}}</td>
+                    <td style="text-align: left">{{product_name}}</td>
+                    <td style="text-align: center">{{quantity}}</td>
+                    <td style="text-align: right">{{price}}</td>
+                    <td style="text-align: right">{{amount}}</td>
+                </tr>
+            {{/lineItems}}
+        </table>
+    </div>
+    <div class="total-invoice">
+        <h4>Subtotal for invoices : <span class="value">{{subTotalInvoice}}</span></h4>
+        <h4>GST (7.0%) : <span class="value">{{GST}}</span></h4>
+        <h4>Total : <span class="value">{{Total}}</span></h4>
+      </div>
+
+    <div class="agreement">
+        <div class="customer">
+            <p>I agree to the price as listed above and affirm tthat the goods are received in good condition</p>
+            <p style="margin-top:120px;border-top: 1px solid black;">Customer's Signature and Company's Signature</p>
+        </div>
+        <div class="owner">
+            <p>On behalf of <b>BIFROST AUTO PTE.LTD</b></p>
+            <p style="margin-top:140px;border-top: 1px solid black;">Authorized Signature</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "companyName": "BigFoot PTE.LTD",
+  "GSTRegNo": "12345678",
+  "customerName": "AXA INSURANCE SINGAPORE PTE.LTD",
+  "customerAddress": " 8 Shenton Way,#24-01 AXA Tower,Singapore 068811",
+  "InvNo": "12345678",
+  "InvDate": "2021-11-02",
+  "Ref": "12345678",
+  "Terms": "BA.LT.20004003",
+  "VehNo": "MH 02 AR 1254",
+  "MakeandModel": "A3",
+  "lineItems": [
+    {
+      "type": "Product",
+      "product_id": 1,
+      "product_name": "Sample Product",
+      "price": 12444,
+      "quantity": 3,
+      "amount": 37332,
+      "status": "Collected",
+      "time": "2021-10-15T08:00:24.177Z",
+      "is_selected": true,
+      "remark": "",
+      "stock_in_hand": 122,
+      "quantity_collected": 3
+    },
+    {
+      "type": "Product",
+      "product_id": 1,
+      "product_name": "Sample Product",
+      "price": 12444,
+      "quantity": 3,
+      "amount": 37332,
+      "status": "Collected",
+      "time": "2021-10-15T08:00:24.177Z",
+      "is_selected": true,
+      "remark": "",
+      "stock_in_hand": 122,
+      "quantity_collected": 3
+    }
+  ],
+  "subTotalInvoice": "$2000",
+  "GST": "$250",
+  "Total": "$2250"
+}
